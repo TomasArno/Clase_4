@@ -1,4 +1,6 @@
-﻿namespace MyLibrary
+﻿using System.Runtime.CompilerServices;
+
+namespace MyLibrary
 {
     public class Sumador
     {
@@ -26,6 +28,16 @@
         public static explicit operator int(Sumador sumador)
         {
             return sumador._cantidadSumas;
+        }
+
+        public static long operator +(Sumador miSumador1, Sumador miSumador2)
+        {
+            return (int)miSumador1 + (int)miSumador2;
+        }
+
+        public static bool operator |(Sumador miSumador1, Sumador miSumador2)
+        {
+            return (int)miSumador1 == (int)miSumador2;
         }
     }
 }
